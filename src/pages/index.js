@@ -70,6 +70,8 @@ export async function getStaticProps() {
   const { v2: cloudinary } = await import('cloudinary');
   const secrets = await getSecretsForBuild();
 
+  console.log('process.env', JSON.stringify(process.env, null, 2));
+
   let resources;
 
   if ( secrets.cloudinary?.bearerToken ) {
